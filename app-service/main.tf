@@ -9,8 +9,8 @@ resource "azurerm_app_service_plan" "test" {
   resource_group_name = "${azurerm_resource_group.test.name}"
 
   sku {
-    tier = "Standard"
-    size = "S1"
+    tier = "Free"
+    size = "F0"
   }
 }
 
@@ -22,7 +22,7 @@ resource "azurerm_app_service" "test" {
 
   site_config {
     dotnet_framework_version = "v4.0"
-    scm_type                 = "LocalGit"
+    scm_type                 = "GitHub"
   }
 
   app_settings = {
